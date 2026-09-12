@@ -15,7 +15,7 @@ const Banner = () => {
                     </div>
                 </div>
                 <div className='justify-self-center'>
-                    <img src= {BannerImage} alt="Banner Image" />
+                    <img src= {BannerImage} alt="Banner Image" className='w-full h-auto' />
                 </div>
             </div>
 

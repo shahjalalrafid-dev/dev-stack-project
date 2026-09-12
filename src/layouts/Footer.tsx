@@ -3,14 +3,14 @@ import LogoImage from '../assets/logo-text.png'
 const Footer = () => {
     return (
         <footer>
-            <section className="container mx-auto pt-25 pb-12">
-                <div className="grid lg:grid-cols-4 gap-x-10 mb-14">
+            <section className="container mx-auto pt-15 pb-12">
+                <div className="grid lg:grid-cols-4 gap-x-10 lg:mb-14 mb-4 grid-cols-1">
                     <div>
                         <div>
-                            <img src= {LogoImage} alt="Footer Logo" />
+                            <img src= {LogoImage} alt="Footer Logo" className='mx-auto lg:mx-0' />
                         </div>
-                        <p className='w-94.5 text-[#64748B] text-[12px] font-sans my-3'>Curated tools, technologies, and resources for developers building modern software.</p>
-                        <ul className='flex gap-4 text-[#475569] font-semibold text-[12px]'>
+                        <p className='lg:w-94.5 text-[#64748B] text-[12px] font-sans my-3 w-auto lg:text-left text-center'>Curated tools, technologies, and resources for developers building modern software.</p>
+                        <ul className='flex gap-4 text-[#475569] font-semibold text-[12px] lg:mt-0 mt-5 justify-center'>
                             <li><a href="#">GitHub</a></li>
                             <li><a href="#">Twitter</a></li>
                             <li><a href="#">LinkedIn</a></li>
@@ -43,7 +43,7 @@ const Footer = () => {
 
                 </div>
                 <hr className='text-[#F1F5F9]' />
-                <div className='mt-8 text-[#94A3B8] text-[12px] flex justify-between items-center'>
+                <div className='lg:mt-8 mt-4 text-[#94A3B8] text-[12px] flex justify-between items-center'>
                     <p>© 2026 Dev Stack. All rights reserved.</p>
                     <div className='flex items-center gap-x-3'>
                         <p>privacy</p>
