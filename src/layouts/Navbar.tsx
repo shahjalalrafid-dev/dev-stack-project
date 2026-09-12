@@ -1,10 +1,12 @@
 
 import Logo from '../assets/logo-text.png'
+import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
   return (
-    <header>
-        <nav className="container mx-auto py-6">
+    //Desktop View
+    <header className='sticky top-0 z-50 bg-white '>
+        <nav className="container mx-auto py-6 hidden lg:block">
             <div className='flex'>
                 <div>
                     <img src={Logo} alt="Logo Image" />
@@ -23,8 +25,26 @@ const Navbar = () => {
             </div>
 
         </nav>
+        <nav className='container mx-auto py-2 lg:hidden block shadow-sm px-2'>
+            <div className='flex items-center'>
+                <div>
+                    <IoMdMenu className='text-3xl' />
+                </div>
+                <div className='mx-auto'>
+                    <img src= {Logo} alt="Logo Image" />
+                </div>
+                <div className='flex gap-x-5'>
+                    <button className='cursor-pointer text-[9px]'>Sign In</button>
+                    <button className='cursor-pointer rounded-full bg-[#D91B7E] px-2.5 py-1 hover:bg-transparent hover:text-[#D91B7E] text-white duration-500 font-semibold text-[9px]'>Sign Up</button>
+                </div>
+            </div>
+        </nav>
+    
+
     </header>
   )
 }
 
 export default Navbar
+
+
