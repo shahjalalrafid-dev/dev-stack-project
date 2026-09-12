@@ -11,6 +11,13 @@ interface IStackCard {
 } 
 
 const StackCard = ({stack, selected, setSelected}: IStackCard ) => {
+
+
+    const handleRemovePlayer = (stack: ITechnologyType) => {
+      const restTechnologies = selected.filter(restTechnology => restTechnology.name !== stack.name);
+      setSelected(restTechnologies);
+    }
+
   return (
     <div className="flex items-center justify-between p-2.5 border border-[#F1F5F9] rounded-xl mb-1.5">
       <div className="flex items-center gap-x-2">
@@ -25,7 +32,7 @@ const StackCard = ({stack, selected, setSelected}: IStackCard ) => {
         </div>
       </div>
       <div>
-        <IoCloseSharp className="cursor-pointer" />
+        <IoCloseSharp onClick={() => handleRemovePlayer(stack)} className="cursor-pointer" />
       </div>
     </div>
 

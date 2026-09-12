@@ -10,7 +10,9 @@ interface IAllStacks {
 
 const AllStacks = ({ selected, setSelected }: IAllStacks) => {
 
-
+const handleRemoveAllTechnologies = () => {
+        setSelected([]);
+    }
 
     if (selected.length === 0) {
         return (
@@ -21,6 +23,7 @@ const AllStacks = ({ selected, setSelected }: IAllStacks) => {
             </div>
         )
     }
+    
     return (
         <div className="border border-[#F1F5F9] rounded-2xl p-5">
             <h5 className='font-sans font-bold text-lg mt-3 mb-2'>Your Stack </h5>
@@ -34,6 +37,9 @@ const AllStacks = ({ selected, setSelected }: IAllStacks) => {
                         
                     })
                 }
+            </div>
+            <div className="mt-8">
+                <button onClick={() => handleRemoveAllTechnologies()} className="border rounded-lg text-[#D82C20] border-[#ED8C85] w-full font-inter font-semibold text-[14px] py-2 cursor-pointer">Remove All</button>
             </div>
 
         </div>
