@@ -8,6 +8,7 @@ import AllStacks from "../components/AllStacks";
 interface Iprops {
     technologyPromise: Promise<ITechnologyType[]>;
     
+    
 }
 
 const Explore = ({ technologyPromise }: Iprops) => {
@@ -22,7 +23,7 @@ const Explore = ({ technologyPromise }: Iprops) => {
             <p className="text-[#64748B] text-base font-sans mt-2 mb-10 text-center lg:text-left">Pick one technology per category to build your ideal stack.</p>
             <div className="lg:flex gap-5">
                 <div className="lg:w-3/4">
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-5">
+                    <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5">
 
                         {
                             technologies.map((technology, index) => {

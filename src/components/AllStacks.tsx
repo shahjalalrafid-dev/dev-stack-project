@@ -19,7 +19,7 @@ const handleRemoveAllTechnologies = () => {
             <div className="border border-[#F1F5F9] rounded-2xl p-5">
                 <h5 className='font-sans font-bold text-lg mt-3 mb-2'>Your Stack </h5>
                 <p className='text-[#64748B] text-[12px] mb-3'>No Technologies Selected Yet</p>
-                <p className="border border-[#F1F5F9] rounded-xl py-6 px-15 text-center text-[#64748B]">Your Stack is empty</p>
+                <p className="border border-[#F1F5F9] rounded-xl py-6 px-15 text-center text-[#64748B] text-[12px]">Your Stack is empty</p>
             </div>
         )
     }

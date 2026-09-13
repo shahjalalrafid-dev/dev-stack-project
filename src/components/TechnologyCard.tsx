@@ -1,16 +1,21 @@
 
-
+import { TiTick } from "react-icons/ti";
 import { FaStar } from "react-icons/fa6";
 import type { ITechnologyType } from '../types/types';
 import { Icon } from "@iconify/react";
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import { Bounce, toast } from "react-toastify";
-const TechnologyCard = ({ technology, selected, setSelected }: { technology: ITechnologyType, selected: ITechnologyType[], setSeleted: Dispatch<SetStateAction<ITechnologyType[]>> }) => {
+const TechnologyCard = ({ technology, selected, setSelected }: { technology: ITechnologyType, selected: ITechnologyType[], setSelected: Dispatch<SetStateAction<ITechnologyType[]>> }) => {
 
-    const [isSelected, setIsSelected] = useState(false);
+    const isSelected = selected.filter((item) => item.name === technology.name).length > 0;
 
     const handleSelectTechnology = () => {
-        setIsSelected(true);
+        if(isSelected === true){
+            alert("You have Already Added this");
+            return;
+            
+        }
+        
         toast(`${technology.name} is added to stack successfully`, {
             position: "top-right",
             autoClose: 5000,
@@ -23,10 +28,11 @@ const TechnologyCard = ({ technology, selected, setSelected }: { technology: ITe
             transition: Bounce,
         });
         setSelected([...selected, technology]);
+         
     }
 
     return (
-        <div className='p-5 border border-[#F1F5F9] rounded-2xl'>
+        <div className='p-5 border border-[#F1F5F9] rounded-2xl shadow-lg'>
             <div className="flex justify-between mt-1">
                 <div>
                     <Icon icon={technology.icon} />
@@ -43,7 +49,7 @@ const TechnologyCard = ({ technology, selected, setSelected }: { technology: ITe
                     <p className='text-[11px]'>{technology.rating}</p>
                 </div>
             </div>
-            <button onClick={() => handleSelectTechnology()} className='bg-black text-white font-sans text-sm py-2.5 px-21.5 rounded-lg cursor-pointer w-full mt-4' disabled={isSelected === true ? true : false} >{isSelected === true ? "Added to Stack Already" : "Add to Stack"}</button>
+            <button onClick={() => handleSelectTechnology()} className='bg-black text-white font-sans text-[10px] py-2.5 w-full rounded-lg cursor-pointer mt-4'>{isSelected === true ? <span><TiTick className="inline-block" /> Added to Stack</span> : `Add to Stack`}</button>
 
         </div>
     )

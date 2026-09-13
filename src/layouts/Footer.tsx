@@ -10,7 +10,7 @@ const Footer = () => {
                             <img src= {LogoImage} alt="Footer Logo" className='mx-auto lg:mx-0' />
                         </div>
                         <p className='lg:w-94.5 text-[#64748B] text-[12px] font-sans my-3 w-auto lg:text-left text-center'>Curated tools, technologies, and resources for developers building modern software.</p>
-                        <ul className='flex gap-4 text-[#475569] font-semibold text-[12px] lg:mt-0 mt-5 justify-center'>
+                        <ul className='flex gap-4 text-[#475569] font-semibold text-[12px] lg:mt-0 mt-5 justify-center lg:justify-start'>
                             <li><a href="#">GitHub</a></li>
                             <li><a href="#">Twitter</a></li>
                             <li><a href="#">LinkedIn</a></li>
